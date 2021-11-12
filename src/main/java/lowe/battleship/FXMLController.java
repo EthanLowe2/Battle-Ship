@@ -7,6 +7,7 @@ bruh
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.ThreadLocalRandom;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -94,134 +95,21 @@ public class FXMLController implements Initializable {
     private Button btnE5;
 
     
-     @FXML
-    void btnA1a(ActionEvent event) {
-
+      @FXML
+    void btnClick(ActionEvent event) {
+        Button btn = (Button) event.getSource();
+        
     }
-
-    @FXML
-    void btnA2a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnA3a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnA4a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnA5a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnB1a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnB2a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnB3a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnB4a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnB5a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnC1a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnC2a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnC3a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnC4a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnC5a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnD1a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnD2a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnD3a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnD4a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnD5a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnE1a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnE2a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnE3a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnE4a(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnE5a(ActionEvent event) {
-
-    }
-    public void btnpress (){
     
-}
 
+    
+    public void ship1 (){
+        int rand = ThreadLocalRandom.current().nextInt(0, 20 +1);
+        if (rand == 1){
+            
+        }
+
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
