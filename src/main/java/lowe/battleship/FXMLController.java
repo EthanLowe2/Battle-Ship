@@ -13,106 +13,51 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 public class FXMLController implements Initializable {
     
-    @FXML
-    private Label lblOut;
+     @FXML
+    private ImageView imgA1,imgA2,imgA3,imgA4,imgA5,imgB1,imgB2,imgB3,imgB4,imgB5,imgC1,imgC2,imgC3,imgC4,imgC5,imgD1,imgD2,imgD3,imgD4,imgD5,imgE1,imgE2,imgE3,imgE4,imgE5;
 
     @FXML
-    private Button btnA1;
+    void MClick(MouseEvent event) {
 
-    @FXML
-    private Button btnA2;
-
-    @FXML
-    private Button btnA3;
-
-    @FXML
-    private Button btnA4;
-
-    @FXML
-    private Button btnA5;
-
-    @FXML
-    private Button btnB2;
-
-    @FXML
-    private Button btnC1;
-
-    @FXML
-    private Button btnD1;
-
-    @FXML
-    private Button btnE1;
-
-    @FXML
-    private Button btnB1;
-
-    @FXML
-    private Button btnB3;
-
-    @FXML
-    private Button btnB4;
-
-    @FXML
-    private Button btnB5;
-
-    @FXML
-    private Button btnC2;
-
-    @FXML
-    private Button btnC3;
-
-    @FXML
-    private Button btnC4;
-
-    @FXML
-    private Button btnC5;
-
-    @FXML
-    private Button btnD2;
-
-    @FXML
-    private Button btnD3;
-
-    @FXML
-    private Button btnD4;
-
-    @FXML
-    private Button btnD5;
-
-    @FXML
-    private Button btnE2;
-
-    @FXML
-    private Button btnE3;
-
-    @FXML
-    private Button btnE4;
-
-    @FXML
-    private Button btnE5;
+    }
 
     
       @FXML
     void btnClick(ActionEvent event) {
         Button btn = (Button) event.getSource();
-        
     }
     
-
+    ImageView box[];
     
-    public void ship1 (){
-        int rand = ThreadLocalRandom.current().nextInt(0, 20 +1);
-        if (rand == 1){
-            
+    int Spot1;
+    int Spot2;
+    
+    public void Slots (){
+         Spot1 = ThreadLocalRandom.current().nextInt(0, 11 +1);
+         Spot2 = ThreadLocalRandom.current().nextInt(0, 11 +1);
+        while (Spot1 == Spot2){
+            Spot2 = ThreadLocalRandom.current().nextInt(0, 11 +1);
         }
-
+    }
+    public void Ships (){
+       if  (Spot1 == 1 || Spot2 == 1){
+        
+    }
+       else if (Spot1 == 2 || Spot2== 2){
+           
+       }
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        ImageView temp[] = {imgA1,imgA2,imgA3,imgA4,imgA5,imgB1,imgB2,imgB3,imgB4,imgB5,imgC1,imgC2,imgC3,imgC4,imgC5,imgD1,imgD2,imgD3,imgD4,imgD5,imgE1,imgE2,imgE3,imgE4,imgE5};
+        box = temp;
         // TODO
+        
     }    
 }

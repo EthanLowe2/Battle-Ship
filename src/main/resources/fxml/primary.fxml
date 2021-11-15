@@ -18,127 +18,127 @@
       <Label layoutX="215.0" layoutY="106.0" text="3" />
       <Label layoutX="255.0" layoutY="106.0" text="4" />
       <Label layoutX="295.0" layoutY="106.0" text="5" />
-      <ImageView fx:id="imgA1" fitHeight="82.0" fitWidth="88.0" layoutX="20.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgA1" fitHeight="82.0" fitWidth="88.0" layoutX="20.0" layoutY="108.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA11" fitHeight="82.0" fitWidth="88.0" layoutX="105.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgA2" fitHeight="82.0" fitWidth="88.0" layoutX="105.0" layoutY="108.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA111" fitHeight="82.0" fitWidth="88.0" layoutX="190.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgA3" fitHeight="82.0" fitWidth="88.0" layoutX="190.0" layoutY="108.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA1111" fitHeight="82.0" fitWidth="88.0" layoutX="275.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgA4" fitHeight="82.0" fitWidth="88.0" layoutX="275.0" layoutY="108.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA11111" fitHeight="82.0" fitWidth="88.0" layoutX="360.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgA5" fitHeight="82.0" fitWidth="88.0" layoutX="360.0" layoutY="108.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA12" fitHeight="82.0" fitWidth="88.0" layoutX="20.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgB1" fitHeight="82.0" fitWidth="88.0" layoutX="20.0" layoutY="189.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA121" fitHeight="82.0" fitWidth="88.0" layoutX="105.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgB2" fitHeight="82.0" fitWidth="88.0" layoutX="105.0" layoutY="189.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA1211" fitHeight="82.0" fitWidth="88.0" layoutX="190.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgB3" fitHeight="82.0" fitWidth="88.0" layoutX="190.0" layoutY="189.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA12111" fitHeight="82.0" fitWidth="88.0" layoutX="275.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgB4" fitHeight="82.0" fitWidth="88.0" layoutX="275.0" layoutY="189.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA121111" fitHeight="82.0" fitWidth="88.0" layoutX="360.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgB5" fitHeight="82.0" fitWidth="88.0" layoutX="360.0" layoutY="189.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA122" fitHeight="82.0" fitWidth="88.0" layoutX="20.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgC1" fitHeight="82.0" fitWidth="88.0" layoutX="20.0" layoutY="270.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA1221" fitHeight="82.0" fitWidth="88.0" layoutX="105.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgC2" fitHeight="82.0" fitWidth="88.0" layoutX="105.0" layoutY="270.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA12211" fitHeight="82.0" fitWidth="88.0" layoutX="190.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgC3" fitHeight="82.0" fitWidth="88.0" layoutX="190.0" layoutY="270.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA122111" fitHeight="82.0" fitWidth="88.0" layoutX="275.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgC4" fitHeight="82.0" fitWidth="88.0" layoutX="275.0" layoutY="270.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA1221111" fitHeight="82.0" fitWidth="88.0" layoutX="360.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgC5" fitHeight="82.0" fitWidth="88.0" layoutX="360.0" layoutY="270.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA1222" fitHeight="82.0" fitWidth="88.0" layoutX="20.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgD1" fitHeight="82.0" fitWidth="88.0" layoutX="20.0" layoutY="351.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA12221" fitHeight="82.0" fitWidth="88.0" layoutX="105.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgD2" fitHeight="82.0" fitWidth="88.0" layoutX="105.0" layoutY="351.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA12222" fitHeight="82.0" fitWidth="88.0" layoutX="190.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgD3" fitHeight="82.0" fitWidth="88.0" layoutX="190.0" layoutY="351.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA12223" fitHeight="82.0" fitWidth="88.0" layoutX="275.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgD4" fitHeight="82.0" fitWidth="88.0" layoutX="275.0" layoutY="351.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA12224" fitHeight="82.0" fitWidth="88.0" layoutX="359.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgD5" fitHeight="82.0" fitWidth="88.0" layoutX="360.0" layoutY="351.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA12225" fitHeight="82.0" fitWidth="88.0" layoutX="20.0" layoutY="432.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgE1" fitHeight="82.0" fitWidth="88.0" layoutX="20.0" layoutY="432.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA122251" fitHeight="82.0" fitWidth="88.0" layoutX="105.0" layoutY="432.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgE2" fitHeight="82.0" fitWidth="88.0" layoutX="105.0" layoutY="432.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA122252" fitHeight="82.0" fitWidth="88.0" layoutX="190.0" layoutY="432.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgE3" fitHeight="82.0" fitWidth="88.0" layoutX="190.0" layoutY="432.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA1222521" fitHeight="82.0" fitWidth="88.0" layoutX="275.0" layoutY="432.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgE4" fitHeight="82.0" fitWidth="88.0" layoutX="275.0" layoutY="432.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgA1222522" fitHeight="82.0" fitWidth="88.0" layoutX="359.0" layoutY="432.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgE5" fitHeight="82.0" fitWidth="88.0" layoutX="360.0" layoutY="432.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Wave.jpg" />
          </image>
