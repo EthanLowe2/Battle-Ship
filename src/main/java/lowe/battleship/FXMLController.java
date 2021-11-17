@@ -12,6 +12,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -20,6 +21,12 @@ public class FXMLController implements Initializable {
 
     @FXML
     private ImageView imgA1, imgA2, imgA3, imgA4, imgA5, imgB1, imgB2, imgB3, imgB4, imgB5, imgC1, imgC2, imgC3, imgC4, imgC5, imgD1, imgD2, imgD3, imgD4, imgD5, imgE1, imgE2, imgE3, imgE4, imgE5;
+    
+    @FXML
+    private Label lblHit;
+
+    @FXML
+    private Label lblMiss;
 
     @FXML
     void MClick(MouseEvent event) {
@@ -34,6 +41,16 @@ public class FXMLController implements Initializable {
 
     int Spot1;
     int Spot2;
+    
+    int Hit;
+    int Miss;
+    
+    public void Count() {
+        Hit++;
+        Miss++;
+        lblHit.setText(""+Hit);
+        lblMiss.setText(""+Miss);
+    }
 
     public void Slots() {
         Spot1 = ThreadLocalRandom.current().nextInt(1, 12 + 1);
@@ -100,7 +117,8 @@ public class FXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         ImageView temp[] = {imgA1, imgA2, imgA3, imgA4, imgA5, imgB1, imgB2, imgB3, imgB4, imgB5, imgC1, imgC2, imgC3, imgC4, imgC5, imgD1, imgD2, imgD3, imgD4, imgD5, imgE1, imgE2, imgE3, imgE4, imgE5};
         box = temp;
-        // TODO
-
+        Reset();
+        Slots();
+        Ships();
     }
 }

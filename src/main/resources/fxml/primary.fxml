@@ -144,7 +144,10 @@
       <Label layoutX="231.0" layoutY="82.0" text="3" />
       <Label layoutX="314.0" layoutY="82.0" text="4" />
       <Label layoutX="399.0" layoutY="82.0" text="5" />
-      <Label layoutX="268.0" layoutY="22.0" text="Label" />
+      <Label fx:id="lblHit" layoutX="268.0" layoutY="22.0" text="0" />
       <Button layoutX="373.0" layoutY="18.0" mnemonicParsing="false" onAction="#btnPlay" text="Button" />
+      <Label layoutX="236.0" layoutY="21.0" text="Hits :" />
+      <Label layoutX="233.0" layoutY="33.0" text="Miss :" />
+      <Label fx:id="lblMiss" layoutX="268.0" layoutY="34.0" text="0" />
     </children>
 </AnchorPane>
