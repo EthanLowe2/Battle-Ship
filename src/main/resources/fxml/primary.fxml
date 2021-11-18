@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="532.0" prefWidth="468.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lowe.battleship.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="532.0" prefWidth="610.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lowe.battleship.FXMLController">
     <children>
         <Label fx:id="lblOut" layoutX="53.0" layoutY="30.0" minHeight="16" minWidth="69" prefHeight="52.0" prefWidth="215.0" text="Begin" />
       <Label layoutX="59.0" layoutY="82.0" text="1" textFill="#1b1b1b" />
@@ -149,5 +149,8 @@
       <Label layoutX="236.0" layoutY="21.0" text="Hits :" />
       <Label layoutX="233.0" layoutY="33.0" text="Miss :" />
       <Label fx:id="lblMiss" layoutX="268.0" layoutY="34.0" text="0" />
+      <Label fx:id="lblScore" layoutX="455.0" layoutY="105.0" prefHeight="396.0" prefWidth="66.0" />
+      <Label fx:id="lblTimer" layoutX="91.0" layoutY="14.0" text="0" />
+      <Label fx:id="lblScore2" layoutX="521.0" layoutY="105.0" prefHeight="396.0" prefWidth="66.0" />
     </children>
 </AnchorPane>
