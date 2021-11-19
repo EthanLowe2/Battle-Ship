@@ -6,6 +6,11 @@ Ethan
 11/15/2021
  */
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.concurrent.ThreadLocalRandom;
@@ -14,6 +19,7 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -26,8 +32,11 @@ public class FXMLController implements Initializable {
     private ImageView imgA1, imgA2, imgA3, imgA4, imgA5, imgB1, imgB2, imgB3, imgB4, imgB5, imgC1, imgC2, imgC3, imgC4, imgC5, imgD1, imgD2, imgD3, imgD4, imgD5, imgE1, imgE2, imgE3, imgE4, imgE5;
     
     @FXML
-    private Label lblHit, lblMiss, lblScore, lblTimer, lblScore2;
-
+    private Label lblHit, lblMiss, lblScore, lblTimer, lblScore2, lblCurrentScore;
+    
+    @FXML
+    private Button btnDone;
+    
     @FXML
     void MClick(MouseEvent event) {
         ImageView img = (ImageView) event.getSource();
@@ -49,7 +58,12 @@ public class FXMLController implements Initializable {
     
     ImageView box[];
     
+    String name[] = new String[5];
+    int score[] = new int[5];
+    
     boolean Running = false;
+    
+    int result;
     
     int Spot1;
     int Spot2;
@@ -122,16 +136,51 @@ public class FXMLController implements Initializable {
         }
     }
     
+    void read() {
+        try {
+
+            BufferedReader readFile = new BufferedReader(new FileReader("file.txt"));
+            for (int i = 0; i < 5; i++) {
+                name[i] = readFile.readLine();
+                score[i] = Integer.parseInt(readFile.readLine());
+            }
+            readFile.close();
+        } catch (IOException e) {
+        }
+    }
+    
+    void writeScore() {
+        try {
+            BufferedWriter outFile = new BufferedWriter(new FileWriter("file.txt"));
+            for (int i = 0; i < 5; i++) {
+                outFile.write(name[i]);
+                outFile.newLine();
+                outFile.write(score[i]);
+                outFile.newLine();
+            }
+            outFile.close();
+        } catch (IOException e) {
+        }
+    }
+    
+    void ReadScores() {
+        String outputSc = "";
+        for (int i = 0; i < 5; i++) {
+            outputSc=outputSc+name[i]+ " "+score[i] + "\n";
+        }
+        lblScore.setText(outputSc);
+    }
+    
     public void Reset () { // clears all of the ImageViews as well as Miss and Hit Counters
-        for (ImageView name : box) {  
-          name.setAccessibleText("");
-          name.setImage(new Image(getClass().getResource("/Wave.jpg").toString()));
+        for (ImageView Name : box) {  
+          Name.setAccessibleText("");
+          Name.setImage(new Image(getClass().getResource("/Wave.jpg").toString()));
         }
-        if(Hit > 0){ //ScoreBoard
-            lblScore.setText(lblMiss.getText() + "\n" + lblScore.getText());
-        } if (Integer.parseInt(lblTimer.getText()) >0) {
-            lblScore2.setText(lblTimer.getText() + "\n" + lblScore2.getText());
-        }
+        //if(Hit > 0){ //ScoreBoard
+        //    lblScore.setText(lblMiss.getText() + "\n" + lblScore.getText());
+       // } if (Integer.parseInt(lblTimer.getText()) >0) {
+      //      lblScore2.setText(lblTimer.getText() + "\n" + lblScore2.getText());
+     //   }
         Hit = 0;
         lblHit.setText(""+Hit);
         Miss = 0;
@@ -139,6 +188,7 @@ public class FXMLController implements Initializable {
         Running = false;
         clock.stop();
         lblTimer.setText("0");
+        lblCurrentScore.setText("");
     }
     
     @FXML
@@ -146,6 +196,16 @@ public class FXMLController implements Initializable {
         Reset();
         Slots();
         Ships();
+    }
+    
+      @FXML
+    void btnDoneA(ActionEvent event) {
+        int miss;
+        int Time;
+    miss = Integer.parseInt(lblMiss.getText());
+    Time = Integer.parseInt(lblTimer.getText());
+    result=1000-Time*5-miss*10;
+    lblCurrentScore.setText(""+result);
     }
 
     @Override
@@ -157,10 +217,13 @@ public class FXMLController implements Initializable {
         Reset();
         Slots();
         Ships();
+        read();
+        ReadScores();
         //todo
         //add maximum misses
         //Timer that starts when you Start playing
         //File Saving
         // Maybe a little prettier
+        //make learderboard buttons ("think you made it on the learderboard?""Save learderboard"
     }
 }

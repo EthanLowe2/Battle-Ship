@@ -145,12 +145,14 @@
       <Label layoutX="314.0" layoutY="82.0" text="4" />
       <Label layoutX="399.0" layoutY="82.0" text="5" />
       <Label fx:id="lblHit" layoutX="268.0" layoutY="22.0" text="0" />
-      <Button layoutX="373.0" layoutY="18.0" mnemonicParsing="false" onAction="#btnPlay" text="Button" />
+      <Button layoutX="373.0" layoutY="18.0" mnemonicParsing="false" onAction="#btnPlay" text="Play" />
       <Label layoutX="236.0" layoutY="21.0" text="Hits :" />
       <Label layoutX="233.0" layoutY="33.0" text="Miss :" />
       <Label fx:id="lblMiss" layoutX="268.0" layoutY="34.0" text="0" />
-      <Label fx:id="lblScore" layoutX="455.0" layoutY="105.0" prefHeight="396.0" prefWidth="66.0" />
       <Label fx:id="lblTimer" layoutX="91.0" layoutY="14.0" text="0" />
-      <Label fx:id="lblScore2" layoutX="521.0" layoutY="105.0" prefHeight="396.0" prefWidth="66.0" />
+      <Button fx:id="btnDone" layoutX="366.0" layoutY="51.0" mnemonicParsing="false" onAction="#btnDoneA" text="Done" />
+      <Label fx:id="lblScore" layoutX="446.0" layoutY="108.0" prefHeight="408.0" prefWidth="159.0" />
+      <Label layoutX="489.0" layoutY="14.0" text="Your Score is " />
+      <Label fx:id="lblCurrentScore" layoutX="481.0" layoutY="43.0" prefHeight="17.0" prefWidth="96.0" />
     </children>
 </AnchorPane>
