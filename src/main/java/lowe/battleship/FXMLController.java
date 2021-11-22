@@ -32,10 +32,10 @@ public class FXMLController implements Initializable {
     private ImageView imgA1, imgA2, imgA3, imgA4, imgA5, imgB1, imgB2, imgB3, imgB4, imgB5, imgC1, imgC2, imgC3, imgC4, imgC5, imgD1, imgD2, imgD3, imgD4, imgD5, imgE1, imgE2, imgE3, imgE4, imgE5;
     
     @FXML
-    private Label lblHit, lblMiss, lblScore, lblTimer, lblScore2, lblCurrentScore;
+    private Label lblHit, lblMiss, lblScore, lblTimer, lblScore2, lblCurrentScore, lblScoreView;
     
     @FXML
-    private Button btnDone;
+    private Button btnDone, btnReset;
     
     @FXML
     void MClick(MouseEvent event) {
@@ -49,9 +49,12 @@ public class FXMLController implements Initializable {
             img.setImage(new Image(getClass().getResource("/Wave Sploosh.jpg").toString()));
             Count(false);
             img.setAccessibleText("O");
+            ScoreMiss();
         }if (Running == false){
             clock.setCycleCount(Timeline.INDEFINITE);
             clock.play();
+        }if (Hit == 4) { //the done button is not visible until you hit all ships
+            btnDone.setVisible(true);
         }
         Running = true;
     }
@@ -64,6 +67,7 @@ public class FXMLController implements Initializable {
     boolean Running = false;
     
     int result;
+    int resultM;
     
     int Spot1;
     int Spot2;
@@ -186,9 +190,8 @@ public class FXMLController implements Initializable {
         Miss = 0;
         lblMiss.setText(""+Miss);
         Running = false;
-        clock.stop();
         lblTimer.setText("0");
-        lblCurrentScore.setText("");
+        lblCurrentScore.setText("1000");
     }
     
     @FXML
@@ -196,16 +199,27 @@ public class FXMLController implements Initializable {
         Reset();
         Slots();
         Ships();
+        btnReset.setVisible(false);
     }
     
       @FXML
     void btnDoneA(ActionEvent event) {
-        int miss;
         int Time;
-    miss = Integer.parseInt(lblMiss.getText());
+        int End;
+    End = Integer.parseInt(lblCurrentScore.getText());
     Time = Integer.parseInt(lblTimer.getText());
-    result=1000-Time*5-miss*10;
+    result=End -Time*5;
     lblCurrentScore.setText(""+result);
+    btnDone.setVisible(false);
+    btnReset.setVisible(true);
+    clock.stop();
+    }
+    
+    void ScoreMiss (){
+        int hurt;
+        hurt = Integer.parseInt(lblCurrentScore.getText());
+        resultM =hurt-50;
+        lblCurrentScore.setText(""+resultM);
     }
 
     @Override
@@ -219,11 +233,10 @@ public class FXMLController implements Initializable {
         Ships();
         read();
         ReadScores();
+        btnDone.setVisible(false);
+        btnReset.setVisible(false);
         //todo
-        //add maximum misses
-        //Timer that starts when you Start playing
         //File Saving
-        // Maybe a little prettier
         //make learderboard buttons ("think you made it on the learderboard?""Save learderboard"
     }
 }

@@ -5,10 +5,10 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="532.0" prefWidth="610.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lowe.battleship.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="532.0" prefWidth="610.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lowe.battleship.FXMLController">
     <children>
-        <Label fx:id="lblOut" layoutX="53.0" layoutY="30.0" minHeight="16" minWidth="69" prefHeight="52.0" prefWidth="215.0" text="Begin" />
       <Label layoutX="59.0" layoutY="82.0" text="1" textFill="#1b1b1b" />
       <ImageView fx:id="imgA1" fitHeight="82.0" fitWidth="88.0" layoutX="20.0" layoutY="108.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -144,15 +144,24 @@
       <Label layoutX="231.0" layoutY="82.0" text="3" />
       <Label layoutX="314.0" layoutY="82.0" text="4" />
       <Label layoutX="399.0" layoutY="82.0" text="5" />
-      <Label fx:id="lblHit" layoutX="268.0" layoutY="22.0" text="0" />
-      <Button layoutX="373.0" layoutY="18.0" mnemonicParsing="false" onAction="#btnPlay" text="Play" />
-      <Label layoutX="236.0" layoutY="21.0" text="Hits :" />
-      <Label layoutX="233.0" layoutY="33.0" text="Miss :" />
-      <Label fx:id="lblMiss" layoutX="268.0" layoutY="34.0" text="0" />
-      <Label fx:id="lblTimer" layoutX="91.0" layoutY="14.0" text="0" />
-      <Button fx:id="btnDone" layoutX="366.0" layoutY="51.0" mnemonicParsing="false" onAction="#btnDoneA" text="Done" />
-      <Label fx:id="lblScore" layoutX="446.0" layoutY="108.0" prefHeight="408.0" prefWidth="159.0" />
-      <Label layoutX="489.0" layoutY="14.0" text="Your Score is " />
-      <Label fx:id="lblCurrentScore" layoutX="481.0" layoutY="43.0" prefHeight="17.0" prefWidth="96.0" />
+      <Label fx:id="lblHit" layoutX="251.0" layoutY="18.0" text="0" />
+      <Button fx:id="btnReset" layoutX="281.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnPlay" prefHeight="72.0" prefWidth="165.0" styleClass="windows7-default" text="Reset" />
+      <Label layoutX="216.0" layoutY="18.0" text="Hits :" />
+      <Label layoutX="212.0" layoutY="34.0" text="Miss :" />
+      <Label fx:id="lblMiss" layoutX="251.0" layoutY="34.0" text="0" />
+      <Label fx:id="lblTimer" layoutX="512.0" layoutY="142.0" text="0">
+         <font>
+            <Font name="System Bold" size="60.0" />
+         </font></Label>
+      <Button fx:id="btnDone" layoutX="23.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnDoneA" prefHeight="72.0" prefWidth="165.0" styleClass="windows7-default" text="Done" />
+      <Label fx:id="lblScore" layoutX="446.0" layoutY="268.0" prefHeight="248.0" prefWidth="159.0" />
+      <Label fx:id="lblScoreView" layoutX="451.0" layoutY="14.0" prefHeight="35.0" prefWidth="155.0" text="Your Score is ">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <Label fx:id="lblCurrentScore" layoutX="470.0" layoutY="39.0" prefHeight="34.0" prefWidth="119.0" text="1000">
+         <font>
+            <Font size="50.0" />
+         </font></Label>
     </children>
 </AnchorPane>
