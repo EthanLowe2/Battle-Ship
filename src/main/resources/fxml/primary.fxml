@@ -2,12 +2,13 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="532.0" prefWidth="610.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lowe.battleship.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="532.0" prefWidth="610.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lowe.battleship.FXMLController">
     <children>
       <Label layoutX="59.0" layoutY="82.0" text="1" textFill="#1b1b1b" />
       <ImageView fx:id="imgA1" fitHeight="82.0" fitWidth="88.0" layoutX="20.0" layoutY="108.0" onMouseClicked="#MClick" pickOnBounds="true" preserveRatio="true">
@@ -149,7 +150,7 @@
       <Label layoutX="216.0" layoutY="18.0" text="Hits :" />
       <Label layoutX="212.0" layoutY="34.0" text="Miss :" />
       <Label fx:id="lblMiss" layoutX="251.0" layoutY="34.0" text="0" />
-      <Label fx:id="lblTimer" layoutX="512.0" layoutY="142.0" text="0">
+      <Label fx:id="lblTimer" layoutX="511.0" layoutY="97.0" text="0">
          <font>
             <Font name="System Bold" size="60.0" />
          </font></Label>
@@ -163,5 +164,7 @@
          <font>
             <Font size="50.0" />
          </font></Label>
+      <Button layoutX="448.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnHighscore" prefHeight="57.0" prefWidth="159.0" styleClass="record-sales" text="New HighScore!!" />
+      <TextField fx:id="txtName" layoutX="451.0" layoutY="178.0" />
     </children>
 </AnchorPane>

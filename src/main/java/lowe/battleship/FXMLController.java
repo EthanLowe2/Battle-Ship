@@ -21,6 +21,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -36,6 +37,9 @@ public class FXMLController implements Initializable {
     
     @FXML
     private Button btnDone, btnReset;
+    
+    @FXML
+    private TextField txtName;
     
     @FXML
     void MClick(MouseEvent event) {
@@ -74,6 +78,8 @@ public class FXMLController implements Initializable {
     
     int Hit;
     int Miss;
+    
+    int G;
     
     Timeline clock = new Timeline(new KeyFrame(Duration.seconds(1), ae -> timer()));
     
@@ -167,6 +173,36 @@ public class FXMLController implements Initializable {
         }
     }
     
+    void HighSores(){
+        int highscore;
+        highscore = Integer.parseInt(lblCurrentScore.getText());
+            for ( G = 0; G < 5; G++) {
+                if (highscore >= score[G]){
+                    editscores();
+                }
+            }
+        } 
+    
+    
+    void editscores (){
+        
+        try {
+            BufferedWriter outFile = new BufferedWriter(new FileWriter("file.txt"));
+            outFile.write(txtName.getText());
+            outFile.newLine();
+            outFile.write(lblCurrentScore.getText());
+            outFile.newLine();
+           for (int j = 0; j < 5; j++) {
+            outFile.write(name[j]);
+            outFile.newLine();
+            outFile.write(score[j]);
+            outFile.newLine();
+            }
+           outFile.close();
+        } catch (IOException e) {
+        }
+    }
+    
     void ReadScores() {
         String outputSc = "";
         for (int i = 0; i < 5; i++) {
@@ -220,6 +256,14 @@ public class FXMLController implements Initializable {
         hurt = Integer.parseInt(lblCurrentScore.getText());
         resultM =hurt-50;
         lblCurrentScore.setText(""+resultM);
+    }
+    
+    @FXML
+    void btnHighscore(ActionEvent event) {
+        if (txtName.equals("")){
+             HighSores();
+        }
+    
     }
 
     @Override
