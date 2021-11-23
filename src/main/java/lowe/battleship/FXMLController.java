@@ -19,6 +19,8 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -176,16 +178,31 @@ public class FXMLController implements Initializable {
     void HighSores(){
         int highscore;
         highscore = Integer.parseInt(lblCurrentScore.getText());
-            for ( G = 0; G < 5; G++) {
-                if (highscore >= score[G]){
-                    editscores();
-                }
-            }
+            if (highscore > score[1]){
+                    editscores1();
+                    read();
+                    ReadScores();
+             }else if (highscore > score[2]){
+                    editscores2();
+                    read();
+                    ReadScores();
+             }else if (highscore > score[3]){
+                    editscores3();
+                    read();
+                    ReadScores();
+             }else if (highscore > score[4]){
+                    editscores4();
+                    read();
+                    ReadScores();
+             }else if (highscore > score[5]){
+                    editscores5();
+                    read();
+                    ReadScores();
+             }
         } 
     
     
-    void editscores (){
-        
+    void editscores1 (){
         try {
             BufferedWriter outFile = new BufferedWriter(new FileWriter("file.txt"));
             outFile.write(txtName.getText());
@@ -195,14 +212,97 @@ public class FXMLController implements Initializable {
            for (int j = 0; j < 5; j++) {
             outFile.write(name[j]);
             outFile.newLine();
-            outFile.write(score[j]);
+            outFile.write(""+score[j]);
             outFile.newLine();
             }
            outFile.close();
         } catch (IOException e) {
         }
     }
-    
+    void editscores2 (){
+        try {
+            BufferedWriter outFile = new BufferedWriter(new FileWriter("file.txt"));
+            outFile.write(name[1]);
+            outFile.newLine();
+            outFile.write(""+score[1]);
+            outFile.newLine();
+            outFile.write(txtName.getText());
+            outFile.newLine();
+            outFile.write(lblCurrentScore.getText());
+            outFile.newLine();
+           for (int g = 3; g < 5; g++) {
+            outFile.write(name[g]);
+            outFile.newLine();
+            outFile.write(""+score[g]);
+            outFile.newLine();
+            }
+           outFile.close();
+        } catch (IOException e) {
+        }
+    }
+    void editscores3 (){
+        try {
+            BufferedWriter outFile = new BufferedWriter(new FileWriter("file.txt"));
+            for (int j = 0; j < 2; j++) {
+            outFile.write(name[j]);
+            outFile.newLine();
+            outFile.write(""+score[j]);
+            outFile.newLine();
+            }
+            outFile.write(txtName.getText());
+            outFile.newLine();
+            outFile.write(lblCurrentScore.getText());
+            outFile.newLine();
+           for (int j2 = 4; j2 < 5; j2++) {
+            outFile.write(name[j2]);
+            outFile.newLine();
+            outFile.write(""+score[j2]);
+            outFile.newLine();
+            }
+           outFile.close();
+        } catch (IOException e) {
+        }
+    }
+    void editscores4 (){
+        try {
+            BufferedWriter outFile = new BufferedWriter(new FileWriter("file.txt"));
+            for (int d = 0; d < 3; d++) {
+            outFile.write(name[d]);
+            outFile.newLine();
+            outFile.write(""+score[d]);
+            outFile.newLine();
+            }
+            outFile.write(txtName.getText());
+            outFile.newLine();
+            outFile.write(lblCurrentScore.getText());
+            outFile.newLine();
+            outFile.write(name[5]);
+            outFile.newLine();
+            outFile.write(""+score[5]);
+            outFile.newLine();
+            
+           outFile.close();
+        } catch (IOException e) {
+        }
+    }
+    void editscores5 (){
+        try {
+            BufferedWriter outFile = new BufferedWriter(new FileWriter("file.txt"));
+            for (int j = 0; j < 5; j++) {
+            outFile.write(name[j]);
+            outFile.newLine();
+            outFile.write(""+score[j]);
+            outFile.newLine();
+            }
+            outFile.write(txtName.getText());
+            outFile.newLine();
+            outFile.write(lblCurrentScore.getText());
+            outFile.newLine();
+           
+           outFile.close();
+        } catch (IOException e) {
+        }
+    }
     void ReadScores() {
         String outputSc = "";
         for (int i = 0; i < 5; i++) {
@@ -260,10 +360,7 @@ public class FXMLController implements Initializable {
     
     @FXML
     void btnHighscore(ActionEvent event) {
-        if (txtName.equals("")){
-             HighSores();
-        }
-    
+    HighSores();
     }
 
     @Override
