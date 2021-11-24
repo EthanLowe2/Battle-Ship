@@ -155,7 +155,10 @@
             <Font name="System Bold" size="60.0" />
          </font></Label>
       <Button fx:id="btnDone" layoutX="23.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnDoneA" prefHeight="72.0" prefWidth="165.0" styleClass="windows7-default" text="Done" />
-      <Label fx:id="lblScore" layoutX="446.0" layoutY="268.0" prefHeight="248.0" prefWidth="159.0" />
+      <Label fx:id="lblScore" layoutX="446.0" layoutY="268.0" prefHeight="248.0" prefWidth="159.0">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
       <Label fx:id="lblScoreView" layoutX="451.0" layoutY="14.0" prefHeight="35.0" prefWidth="155.0" text="Your Score is ">
          <font>
             <Font name="System Bold" size="24.0" />
