@@ -46,11 +46,11 @@ public class FXMLController implements Initializable {
     @FXML
     void MClick(MouseEvent event) {
         ImageView img = (ImageView) event.getSource();
-        
+       if (!txtName.getText().equals("")){ 
         if (img.getAccessibleText().equals("X")){
             img.setImage(new Image(getClass().getResource("/Wave Kaboom.jpg").toString()));
             Count(true);
-            img.setAccessibleText("O");
+            img.setAccessibleText("O"); 
         }if (img.getAccessibleText().equals("")){
             img.setImage(new Image(getClass().getResource("/Wave Sploosh.jpg").toString()));
             Count(false);
@@ -63,6 +63,7 @@ public class FXMLController implements Initializable {
             btnDone.setVisible(true);
         }
         Running = true;
+       }
     }
     
     ImageView box[];
