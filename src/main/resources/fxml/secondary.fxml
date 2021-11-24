@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="lowe.battleship.SecondaryController">
+   <children>
+      <Button layoutX="213.0" layoutY="253.0" mnemonicParsing="false" onAction="#btnStart" prefHeight="92.0" prefWidth="174.0" text="START">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Whale.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="22.0" layoutY="201.0" prefHeight="27.0" prefWidth="164.0" text="the polluting boats">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="174.0" text="Send the whales after">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="404.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Boat.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="422.0" layoutY="219.0" text="you have to hit both Twice">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="435.0" layoutY="187.0" text="There are 2 Boats">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

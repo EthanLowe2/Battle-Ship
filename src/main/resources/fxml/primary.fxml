@@ -169,5 +169,6 @@
          </font></Label>
       <Button layoutX="448.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnHighscore" prefHeight="57.0" prefWidth="159.0" styleClass="record-sales" text="New HighScore!!" />
       <TextField fx:id="txtName" layoutX="451.0" layoutY="178.0" />
+      <Label layoutX="513.0" layoutY="100.0" text="Timer" />
     </children>
 </AnchorPane>
