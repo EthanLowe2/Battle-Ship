@@ -27,6 +27,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 public class FXMLController implements Initializable {
@@ -35,18 +36,22 @@ public class FXMLController implements Initializable {
     private ImageView imgA1, imgA2, imgA3, imgA4, imgA5, imgB1, imgB2, imgB3, imgB4, imgB5, imgC1, imgC2, imgC3, imgC4, imgC5, imgD1, imgD2, imgD3, imgD4, imgD5, imgE1, imgE2, imgE3, imgE4, imgE5;
     
     @FXML
-    private Label lblHit, lblMiss, lblScore, lblTimer, lblScore2, lblCurrentScore, lblScoreView;
+    private Label lblHit, lblMiss, lblScore, lblTimer, lblScore2, lblCurrentScore, lblScoreView, lblLose2, lblLose1, lblLose3;
     
     @FXML
-    private Button btnDone, btnReset;
+    private Button btnDone, btnReset, btnLose;
     
     @FXML
     private TextField txtName;
     
     @FXML
+    private Rectangle recLose;
+    
+    @FXML
     void MClick(MouseEvent event) {
         ImageView img = (ImageView) event.getSource();
        if (!txtName.getText().equals("")){ 
+           if(!lblCurrentScore.getText().contains("-")){
         if (img.getAccessibleText().equals("X")){
             img.setImage(new Image(getClass().getResource("/Wave Kaboom.jpg").toString()));
             Count(true);
@@ -63,6 +68,24 @@ public class FXMLController implements Initializable {
             btnDone.setVisible(true);
         }
         Running = true;
+           }
+           else if (lblCurrentScore.getText().contains("-")) {
+               lblLose1.setVisible(true);
+               lblLose2.setVisible(true);
+               lblLose3.setVisible(true);
+               recLose.setVisible(true);
+               btnLose.setVisible(true);
+               clock.stop();
+               btnDone.setVisible(false);
+               btnReset.setVisible(false);
+           }
+       }
+       else {
+           Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Alert");
+            alert.setHeaderText(null);
+            alert.setContentText("Please Fill in your name");
+            alert.showAndWait();
        }
     }
     
@@ -240,11 +263,6 @@ public class FXMLController implements Initializable {
           Name.setAccessibleText("");
           Name.setImage(new Image(getClass().getResource("/Wave.jpg").toString()));
         }
-        //if(Hit > 0){ //ScoreBoard
-        //    lblScore.setText(lblMiss.getText() + "\n" + lblScore.getText());
-       // } if (Integer.parseInt(lblTimer.getText()) >0) {
-      //      lblScore2.setText(lblTimer.getText() + "\n" + lblScore2.getText());
-     //   }
         Hit = 0;
         lblHit.setText(""+Hit);
         Miss = 0;
@@ -284,7 +302,20 @@ public class FXMLController implements Initializable {
     
     @FXML
     void btnHighscore(ActionEvent event) {
-    HighSores();
+    if (!lblCurrentScore.getText().equals("1000") && Running == false){
+    HighSores();    
+    }    
+    }
+    
+    @FXML
+    void btnPlayAgain(ActionEvent event) {
+        btnPlay(event);
+        lblLose1.setVisible(false);
+        lblLose2.setVisible(false);
+        lblLose3.setVisible(false);
+        recLose.setVisible(false);
+        btnLose.setVisible(false);
+        Running = false;
     }
 
     @Override
@@ -300,6 +331,11 @@ public class FXMLController implements Initializable {
         ReadScores();
         btnDone.setVisible(false);
         btnReset.setVisible(false);
+        lblLose1.setVisible(false);
+        lblLose2.setVisible(false);
+        lblLose3.setVisible(false);
+        recLose.setVisible(false);
+        btnLose.setVisible(false);
         //todo
         //File Saving
         //make learderboard buttons ("think you made it on the learderboard?""Save learderboard"

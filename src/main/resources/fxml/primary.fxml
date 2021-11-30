@@ -6,6 +6,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="532.0" prefWidth="610.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lowe.battleship.FXMLController">
@@ -170,5 +171,26 @@
       <Button layoutX="448.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnHighscore" prefHeight="57.0" prefWidth="159.0" styleClass="record-sales" text="New HighScore!!" />
       <TextField fx:id="txtName" layoutX="451.0" layoutY="178.0" />
       <Label layoutX="513.0" layoutY="100.0" text="Timer" />
+      <Rectangle fx:id="recLose" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="427.0" layoutX="20.0" layoutY="89.0" stroke="BLACK" strokeType="INSIDE" width="476.0" />
+      <Label fx:id="lblLose2" layoutX="111.0" layoutY="203.0" prefHeight="181.0" prefWidth="295.0" text="YOU LOSE">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblLose1" layoutX="137.0" layoutY="205.0" text="RAN OUT OF WHALES">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblLose3" layoutX="158.0" layoutY="345.0" prefHeight="27.0" prefWidth="194.0" text="Click here to play again">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnLose" layoutX="164.0" layoutY="392.0" mnemonicParsing="false" onAction="#btnPlayAgain" prefHeight="57.0" prefWidth="174.0" styleClass="round-red" text="Play again">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>
