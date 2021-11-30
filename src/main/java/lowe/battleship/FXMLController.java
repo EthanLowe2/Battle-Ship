@@ -172,7 +172,7 @@ public class FXMLController implements Initializable {
         }
     }
     
-    void read() {
+    void read() { //reading the text file and putting the names and scores in an array
         try {
 
             BufferedReader readFile = new BufferedReader(new FileReader("file.txt"));
@@ -185,7 +185,7 @@ public class FXMLController implements Initializable {
         }
     }
     
-    void writeScore() {
+    void writeScore() { //wrighting in the text file the names and scores in a piticular form
         try {
             BufferedWriter outFile = new BufferedWriter(new FileWriter("file.txt"));
             for (int i = 0; i < 5; i++) {
@@ -199,26 +199,26 @@ public class FXMLController implements Initializable {
         }
     }
     
-    void HighSores(){
+    void HighSores(){ 
         int highscore;
         highscore = Integer.parseInt(lblCurrentScore.getText());
-            if (highscore > score[0]){
+            if (highscore > score[0]){ //beat the first place
                     editscores1(0,4 );
                     read();
                     ReadScores();
-             }else if (highscore > score[1]){
+             }else if (highscore > score[1]){ // beat the second place
                  editscores1(1,4);
                     read();
                     ReadScores();
-             }else if (highscore > score[2]){
+             }else if (highscore > score[2]){ // beat the third place
                  editscores1(2,4);
                     read();
                     ReadScores();
-             }else if (highscore > score[3]){
+             }else if (highscore > score[3]){ // beat the forth place 
                  editscores1(3,4);
                     read();
                     ReadScores();
-             }else if (highscore > score[4]){
+             }else if (highscore > score[4]){ // beath the fith place
                  editscores1(4,4);
                     read();
                     ReadScores();
@@ -226,7 +226,7 @@ public class FXMLController implements Initializable {
         } 
     
     
-    void editscores1 (int above, int below){
+    void editscores1 (int above, int below){ //overly complicated way of editing the text file holding the scores
         try {
             BufferedWriter outFile = new BufferedWriter(new FileWriter("file.txt"));
             for (int j = 0; j < above; j++) {
@@ -250,7 +250,7 @@ public class FXMLController implements Initializable {
         }
     }
     
-    void ReadScores() {
+    void ReadScores() { // a method for puting the names and scores on a label if the text file was updated need to call after calling the read method
         String outputSc = "";
         for (int i = 0; i < 5; i++) {
             outputSc=outputSc+name[i]+ " "+score[i] + "\n";
@@ -273,7 +273,7 @@ public class FXMLController implements Initializable {
     }
     
     @FXML
-    void btnPlay(ActionEvent event) {
+    void btnPlay(ActionEvent event) { //button with the reset button label
         Reset();
         Slots();
         Ships();
@@ -281,7 +281,7 @@ public class FXMLController implements Initializable {
     }
     
       @FXML
-    void btnDoneA(ActionEvent event) {
+    void btnDoneA(ActionEvent event) { //done button
         int Time;
         int End;
     End = Integer.parseInt(lblCurrentScore.getText());
@@ -293,7 +293,7 @@ public class FXMLController implements Initializable {
     clock.stop();
     }
     
-    void ScoreMiss (){
+    void ScoreMiss (){ // a method to be able to take away your score live 
         int hurt;
         hurt = Integer.parseInt(lblCurrentScore.getText());
         resultM =hurt-65;
@@ -308,7 +308,7 @@ public class FXMLController implements Initializable {
     }
     
     @FXML
-    void btnPlayAgain(ActionEvent event) {
+    void btnPlayAgain(ActionEvent event) { //button that comes up when you lose and resets so you can play again
         btnPlay(event);
         lblLose1.setVisible(false);
         lblLose2.setVisible(false);
