@@ -160,13 +160,13 @@ public class FXMLController implements Initializable {
         } if (Spot1 == 9 || Spot2 == 9) {
             box[18].setAccessibleText("X");
             box[19].setAccessibleText("X");
-        } else if (Spot1 == 10 || Spot2 == 10) {
+        } if (Spot1 == 10 || Spot2 == 10) {
             box[22].setAccessibleText("X");
             box[23].setAccessibleText("X");
-        } else if (Spot1 == 11 || Spot2 == 11) {
+        } if (Spot1 == 11 || Spot2 == 11) {
             box[15].setAccessibleText("X");
             box[20].setAccessibleText("X");
-        } else if (Spot1 == 12 || Spot2 == 12) {
+        } if (Spot1 == 12 || Spot2 == 12) {
             box[16].setAccessibleText("X");
             box[21].setAccessibleText("X");
         }
